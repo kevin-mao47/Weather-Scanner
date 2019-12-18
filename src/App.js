@@ -15,6 +15,8 @@ class App extends React.Component {
     city: undefined,
     country: undefined,
     humidity: undefined,
+    windspeed: undefined,
+    cloudiness: undefined,
     description: undefined,
     error: undefined
   }
@@ -39,6 +41,8 @@ class App extends React.Component {
         city: response.name,
         country: response.sys.country,
         humidity: response.main.humidity,
+        windspeed: response.wind.speed,
+        cloudiness: response.clouds.all,
         description: response.weather[0].description,
         error: ""
       })
@@ -74,6 +78,8 @@ class App extends React.Component {
                     city={this.state.city}
                     country={this.state.country}
                     humidity={this.state.humidity}
+                    windspeed={this.state.windspeed}
+                    cloudiness={this.state.cloudiness}
                     description={this.state.description}
                     error={this.state.error}
                   />
